@@ -16,8 +16,15 @@ class StockTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StockCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AssetCell", for: indexPath)
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SearchViewController {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//            vc.current_asset = self.adventurers[indexPath.row]
+        }
+    }
+
 }
