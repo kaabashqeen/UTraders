@@ -14,6 +14,8 @@ class PortfolioTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBOutlet weak var PotfolioView: UIView!
+    @IBOutlet weak var PortfolioValueLabel: UILabel!
     
     @IBOutlet weak var newTrade: UIBarButtonItem!
     @IBOutlet weak var settings: UIBarButtonItem!

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5FC879C121A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */; };
 		5FC879C321A3C6BE00A1CB22 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC879C221A3C6BE00A1CB22 /* SearchViewController.swift */; };
+		5FF029EF21AF9A4D0014DBA3 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF029EE21AF9A4D0014DBA3 /* AssetViewController.swift */; };
+		5FF029F121AF9DB10014DBA3 /* StockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF029F021AF9DB10014DBA3 /* StockData.swift */; };
 		D6F6F29C2194EEF000FF777A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F6F29B2194EEF000FF777A /* AppDelegate.swift */; };
 		D6F6F2A12194EEF000FF777A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6F6F29F2194EEF000FF777A /* Main.storyboard */; };
 		D6F6F2A32194EEF200FF777A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6F6F2A22194EEF200FF777A /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioAssetTableViewCell.swift; sourceTree = "<group>"; };
 		5FC879C221A3C6BE00A1CB22 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5FF029EE21AF9A4D0014DBA3 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
+		5FF029F021AF9DB10014DBA3 /* StockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockData.swift; sourceTree = "<group>"; };
 		D6F6F2982194EEF000FF777A /* UTraders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTraders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F6F29B2194EEF000FF777A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6F6F2A02194EEF000FF777A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				D6F6F2AD2194EF5600FF777A /* PortfolioTableViewController.swift */,
 				5FC879C221A3C6BE00A1CB22 /* SearchViewController.swift */,
 				D6F6F29F2194EEF000FF777A /* Main.storyboard */,
+				5FF029F021AF9DB10014DBA3 /* StockData.swift */,
+				5FF029EE21AF9A4D0014DBA3 /* AssetViewController.swift */,
 				5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */,
 				D6F6F2A22194EEF200FF777A /* Assets.xcassets */,
 				D6F6F2A42194EEF200FF777A /* LaunchScreen.storyboard */,
@@ -143,6 +149,8 @@
 			files = (
 				D6F6F2AE2194EF5600FF777A /* PortfolioTableViewController.swift in Sources */,
 				5FC879C121A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift in Sources */,
+				5FF029F121AF9DB10014DBA3 /* StockData.swift in Sources */,
+				5FF029EF21AF9A4D0014DBA3 /* AssetViewController.swift in Sources */,
 				5FC879C321A3C6BE00A1CB22 /* SearchViewController.swift in Sources */,
 				D6F6F29C2194EEF000FF777A /* AppDelegate.swift in Sources */,
 			);
