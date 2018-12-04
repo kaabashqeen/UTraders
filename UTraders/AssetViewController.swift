@@ -78,7 +78,7 @@ class AssetViewController: UIViewController, StockDataProtocol {
         //self.weatherDataSession.delegate = self
         self.stockDataSession.delegate = self
         print(current_company)
-        stockDataSession.getAssetData(identifier: current_company)
+        stockDataSession.getAssetData(identifier: "AAPL")
         
     }
 

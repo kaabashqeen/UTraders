@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F010B5921B515080055F1BF /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010B5821B515080055F1BF /* SearchData.swift */; };
 		5F010B5B21B5201C0055F1BF /* companySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */; };
+		5F9479AE21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */; };
 		5FC879C121A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */; };
 		5FC879C321A3C6BE00A1CB22 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC879C221A3C6BE00A1CB22 /* SearchViewController.swift */; };
 		5FF029EF21AF9A4D0014DBA3 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF029EE21AF9A4D0014DBA3 /* AssetViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		5F010B5821B515080055F1BF /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companySearchTableViewCell.swift; sourceTree = "<group>"; };
+		5F9479AD21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioAssetTableViewCell.swift; sourceTree = "<group>"; };
 		5FC879C221A3C6BE00A1CB22 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5FF029EE21AF9A4D0014DBA3 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F6F29B2194EEF000FF777A /* AppDelegate.swift */,
+				5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */,
 				D6F6F2AD2194EF5600FF777A /* PortfolioTableViewController.swift */,
 				D6F6F29F2194EEF000FF777A /* Main.storyboard */,
 				5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9479AE21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld in Sources */,
 				D6F6F2AE2194EF5600FF777A /* PortfolioTableViewController.swift in Sources */,
 				5FC879C121A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift in Sources */,
 				5F010B5921B515080055F1BF /* SearchData.swift in Sources */,
@@ -364,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5F9479AD21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodel */,
+			);
+			currentVersion = 5F9479AD21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodel */;
+			path = PortfolioDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D6F6F2902194EEF000FF777A /* Project object */;
 }
