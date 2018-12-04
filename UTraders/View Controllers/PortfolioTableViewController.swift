@@ -13,10 +13,15 @@ import CoreData
 class PortfolioTableViewController: UITableViewController {
     
 
+    var investments = Investments()
+    
     var stocks: [Asset] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.PortfolioValueLabel.text = String(self.investments.portfolioValue)
+        
         //loadPortfolio()
         var apple = Asset()
         apple.ticker = "AAPL"
@@ -102,6 +107,15 @@ class PortfolioTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
             vc.current_company = stocks[indexPath.row].ticker!
             print(stocks[indexPath.row])
+        }
+        if let vc = segue.destination as? SettingsViewController {
+            vc.investments = self.investments
+        }
+    }
+    
+    @IBAction func unwindtoPTVCfromSettings(segue:UIStoryboardSegue) {
+        if let vc = segue.source as? SettingsViewController {
+            self.investments = vc.investments
         }
     }
     

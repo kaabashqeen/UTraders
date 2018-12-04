@@ -104,29 +104,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="A4E-V7-Xgg">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="113"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Tq6-FA-fzh">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUG-hy-bcE">
-                                    <rect key="frame" x="163" y="46" width="49" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmH-Db-I4M">
+                                    <rect key="frame" x="146" y="12" width="82" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="iUG-hy-bcE" firstAttribute="centerX" secondItem="A4E-V7-Xgg" secondAttribute="centerX" id="E5k-h8-6hY"/>
-                                <constraint firstItem="iUG-hy-bcE" firstAttribute="centerY" secondItem="A4E-V7-Xgg" secondAttribute="centerY" id="ll5-Vh-Ckz"/>
-                            </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssetCell" rowHeight="89" id="0Nm-6f-h9J" customClass="PortfolioAssetTableViewCell" customModule="UTraders" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="141" width="375" height="89"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssetCell" rowHeight="90" id="0Nm-6f-h9J" customClass="PortfolioAssetTableViewCell" customModule="UTraders" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Nm-6f-h9J" id="4vK-bJ-OGA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ticker (count)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-ut-XnU">
@@ -177,8 +174,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="PortfolioValueLabel" destination="iUG-hy-bcE" id="LO3-gI-2hv"/>
-                        <outlet property="PotfolioView" destination="A4E-V7-Xgg" id="Roe-nD-poa"/>
+                        <outlet property="PortfolioValueLabel" destination="HmH-Db-I4M" id="Uaq-9s-CUx"/>
+                        <outlet property="PotfolioView" destination="Tq6-FA-fzh" id="c8E-Pp-Sdk"/>
                         <outlet property="settings" destination="K3V-1Z-cul" id="eFi-5T-RoT"/>
                     </connections>
                 </tableViewController>
@@ -314,7 +311,7 @@
         <!--Settings-->
         <scene sceneID="xC5-6y-Pxj">
             <objects>
-                <viewController title="Settings" id="MOV-TG-heg" sceneMemberID="viewController">
+                <viewController title="Settings" id="MOV-TG-heg" customClass="SettingsViewController" customModule="UTraders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Ii-Uj-zOX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,9 +380,19 @@
                                 <state key="normal" title="ADD FUNDS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addFunds:" destination="MOV-TG-heg" eventType="touchUpInside" id="9of-Kl-2Lw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Portfolio Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yt-vs-8gG">
                                 <rect key="frame" x="102" y="415" width="171" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Portfolio Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-Kb-ggQ">
+                                <rect key="frame" x="102" y="552" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -395,8 +402,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7nz-tn-OQU"/>
                     </view>
+                    <connections>
+                        <outlet property="addFundsButton" destination="Bm1-7c-Xq8" id="rXo-dC-wcH"/>
+                        <outlet property="firstNameLabel" destination="8Ow-pw-MDo" id="m1P-1H-Idz"/>
+                        <outlet property="firstNameValueLabel" destination="Ayt-iY-IfM" id="d4M-co-WKM"/>
+                        <outlet property="lastLoginLabel" destination="CuK-rg-1rW" id="EE7-Uc-0Kw"/>
+                        <outlet property="lastLoginValueLabel" destination="1FX-9T-sLP" id="Zz3-jW-7br"/>
+                        <outlet property="lastNameLabel" destination="aYt-VE-nzn" id="B64-W3-pAe"/>
+                        <outlet property="lastNameValueLabel" destination="Bwo-r0-PPh" id="BsO-Xc-aDC"/>
+                        <outlet property="portfolioLabel" destination="4Yt-vs-8gG" id="77h-8B-YYp"/>
+                        <outlet property="portfolioValueLabel" destination="QUe-Kb-ggQ" id="aag-dB-Gxe"/>
+                        <outlet property="usernameLabel" destination="mCA-C8-MNS" id="XMI-Ox-meh"/>
+                        <outlet property="usernameValueLabel" destination="XQs-W3-K4w" id="txx-up-9dc"/>
+                        <segue destination="3Yr-pM-tDM" kind="unwind" identifier="unwindtoPTVCfromS" unwindAction="unwindtoPTVCfromSettingsWithSegue:" id="l9E-4i-VtS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Cp-MH-1ZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3Yr-pM-tDM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2776.8000000000002" y="142.57871064467767"/>
         </scene>

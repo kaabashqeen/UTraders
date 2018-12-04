@@ -10,7 +10,6 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SearchCompanyDataProtocol {
 
-    
     var stocks: [Asset] = []
     var initialState: [Company] = []
     var searching = false

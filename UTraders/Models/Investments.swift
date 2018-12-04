@@ -1,5 +1,5 @@
 //
-//  Stock.swift
+//  Investments.swift
 //  UTraders
 //
 //  Created by Kaab Ashqeen on 12/4/18.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-class Asset {
+class Investments {
     
-    var company: String?
-    var numberOfShares: Int?
-    var ticker: String?
-    var valueInvested: Float?
+    var portfolioValue: Float = 10000.00
+    var investedValue: Float = 0
+    var Assets: [Asset] = []
     
 }
