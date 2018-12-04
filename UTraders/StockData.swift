@@ -34,7 +34,7 @@ struct AssetStock: Decodable {
     
 }
 protocol StockDataProtocol {
-    func stockDataHandler(data:NSDictionary)
+    func stockDataHandler(data:AssetData)
     func responseErrorHandler(error:String)
 }
 
@@ -80,16 +80,15 @@ class StockData {
         
         let yearString = String(year)
         var monthString = String(month)
-        if monthString.length < 1 {
+        if monthString.length == 1 {
             monthString = "0" + monthString
         }
         
         var dayString = String(day)
-        if dayString.length < 1 {
+        if dayString.length == 1 {
             dayString = "0" + dayString
         }
         
-        print(day)
         let date = "&start_date=" + yearString + monthString + dayString
         let urlPath = self.stockUrl + identifier + date + self.apiKey
         print(urlPath)
@@ -105,8 +104,9 @@ class StockData {
                 return
             }
             do { //point 3
-                print("URL session initialization success")
+                //print("URL session initialization success")
                 let assetData = try JSONDecoder.init().decode(AssetStock.self, from: data)
+                self.delegate?.stockDataHandler(data: assetData.stockNums[0])
                 print(assetData.stockNums[0].open)
             } catch {
                 print("Fail at point 3")

@@ -50,6 +50,7 @@ class SearchData {
                 //print("URL session initialization success")
                 let searchData = try JSONDecoder.init().decode(SearchCompanyData.self, from: data)
                 self.delegate?.searchCompanyDataHandler(data: searchData)
+
                 //print(searchData.companies)
             } catch {
                 print("Fail at point 3")
