@@ -74,18 +74,18 @@ class StockData {
         }
 
         let day = calendar.component(.day, from: dateToParse)
-        
+        let time = calendar.component(.hour, from: dateToParse)
         let month = calendar.component(.month, from: dateToParse)
         let year = calendar.component(.year, from: dateToParse)
         
         let yearString = String(year)
         var monthString = String(month)
-        if monthString.length == 1 {
+        if monthString.count == 1 {
             monthString = "0" + monthString
         }
         
         var dayString = String(day)
-        if dayString.length == 1 {
+        if dayString.count == 1 {
             dayString = "0" + dayString
         }
         

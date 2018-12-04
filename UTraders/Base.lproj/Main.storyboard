@@ -129,49 +129,24 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ovy-6y-DhO">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="88.5"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stock Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-ut-XnU">
-                                            <rect key="frame" x="108" y="11" width="114" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ticker (count)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-ut-XnU">
+                                            <rect key="frame" x="16" y="32" width="133" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-lf-fKr">
-                                            <rect key="frame" x="108" y="40" width="105" height="21"/>
+                                            <rect key="frame" x="230" y="32" width="129" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-iP-jgG">
-                                            <rect key="frame" x="108" y="57" width="109" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Stake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-IM-X42">
-                                            <rect key="frame" x="233" y="29" width="126" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Ovy-6y-DhO" firstAttribute="leading" secondItem="4vK-bJ-OGA" secondAttribute="leading" id="9nD-oe-fyi"/>
-                                        <constraint firstItem="Ovy-6y-DhO" firstAttribute="top" secondItem="4vK-bJ-OGA" secondAttribute="top" id="Eg5-bb-OnI"/>
-                                        <constraint firstAttribute="bottom" secondItem="Ovy-6y-DhO" secondAttribute="bottom" id="EwH-7U-Z8I"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="Stock Cell"/>
                                 <connections>
-                                    <outlet property="portfolioAssetAlgoValue" destination="SBE-iP-jgG" id="hbu-8T-OYb"/>
-                                    <outlet property="portfolioAssetAllocationValue" destination="fzm-IM-X42" id="0k4-u8-eo9"/>
-                                    <outlet property="portfolioAssetImage" destination="Ovy-6y-DhO" id="8Qq-dS-QK0"/>
                                     <outlet property="portfolioAssetName" destination="a5j-ut-XnU" id="c6E-9f-cM4"/>
                                     <outlet property="portfolioAssetValue" destination="zUh-lf-fKr" id="HLS-tj-DIt"/>
                                     <segue destination="e76-sH-dNM" kind="show" id="xSM-iF-rEU"/>
@@ -249,18 +224,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoG-AA-TJk">
-                                <rect key="frame" x="60.5" y="538" width="65" height="30"/>
-                                <state key="normal" title="High/Low"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXK-GR-7Lg">
-                                <rect key="frame" x="170.5" y="532" width="34" height="30"/>
-                                <state key="normal" title="Pairs"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-7O-XMj">
-                                <rect key="frame" x="249.5" y="538" width="68" height="30"/>
-                                <state key="normal" title="Mean Rev"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pairs Trade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMZ-95-uXE">
                                 <rect key="frame" x="139.5" y="498" width="96" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -279,6 +242,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-ij-5Xl">
+                                <rect key="frame" x="151" y="566" width="73" height="30"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.54901960780000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="TRADE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tradeButtonClicked:" destination="e76-sH-dNM" eventType="touchUpInside" id="bqE-sY-aMp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -286,23 +259,21 @@
                             <constraint firstItem="7pE-iF-UpV" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="1uU-Cv-yW6"/>
                             <constraint firstItem="ZJC-r8-fVI" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="2Pg-b6-gei"/>
                             <constraint firstItem="cMZ-95-uXE" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="8LA-4J-D8f"/>
-                            <constraint firstItem="hXK-GR-7Lg" firstAttribute="leading" secondItem="yoG-AA-TJk" secondAttribute="trailing" constant="45" id="APr-F5-E8P"/>
                             <constraint firstItem="DgO-Mp-e0z" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="CcN-Cg-shd"/>
                             <constraint firstItem="GQe-rP-lMd" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="Eun-0e-JxL"/>
                             <constraint firstItem="CeL-91-oAi" firstAttribute="top" secondItem="7pE-iF-UpV" secondAttribute="bottom" constant="10" id="FSv-1C-0XN"/>
                             <constraint firstItem="ZJC-r8-fVI" firstAttribute="top" secondItem="lPB-5P-nO2" secondAttribute="top" constant="150" id="GPM-ql-VHm"/>
-                            <constraint firstItem="hXK-GR-7Lg" firstAttribute="top" secondItem="cMZ-95-uXE" secondAttribute="bottom" constant="10" id="HJK-KR-bjt"/>
                             <constraint firstItem="DgO-Mp-e0z" firstAttribute="leading" secondItem="lPB-5P-nO2" secondAttribute="leading" id="KxT-lj-2I8"/>
                             <constraint firstItem="lPB-5P-nO2" firstAttribute="trailing" secondItem="GQe-rP-lMd" secondAttribute="trailing" id="NB1-jH-0pv"/>
                             <constraint firstItem="JWZ-wQ-QHh" firstAttribute="top" secondItem="CeL-91-oAi" secondAttribute="bottom" constant="10" id="NFr-eu-Dag"/>
                             <constraint firstItem="JWZ-wQ-QHh" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="Pf8-w0-til"/>
                             <constraint firstItem="lPB-5P-nO2" firstAttribute="trailing" secondItem="t9u-L4-wVy" secondAttribute="trailing" id="SjL-rq-375"/>
+                            <constraint firstItem="FFf-ij-5Xl" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="SjU-uL-pfb"/>
                             <constraint firstItem="lPB-5P-nO2" firstAttribute="trailing" secondItem="7pE-iF-UpV" secondAttribute="trailing" id="VPg-1F-sb7"/>
                             <constraint firstItem="GQe-rP-lMd" firstAttribute="leading" secondItem="lPB-5P-nO2" secondAttribute="leading" id="VdV-2S-rVr"/>
-                            <constraint firstItem="aJz-7O-XMj" firstAttribute="leading" secondItem="hXK-GR-7Lg" secondAttribute="trailing" constant="45" id="WbZ-Xn-vhf"/>
                             <constraint firstItem="lPB-5P-nO2" firstAttribute="trailing" secondItem="DgO-Mp-e0z" secondAttribute="trailing" id="aTf-3P-ia4"/>
                             <constraint firstItem="GQe-rP-lMd" firstAttribute="top" secondItem="ZJC-r8-fVI" secondAttribute="bottom" constant="10" id="b08-sl-zla"/>
-                            <constraint firstItem="hXK-GR-7Lg" firstAttribute="centerX" secondItem="Opo-jt-27p" secondAttribute="centerX" id="eUR-gq-8ms"/>
+                            <constraint firstItem="FFf-ij-5Xl" firstAttribute="top" secondItem="cMZ-95-uXE" secondAttribute="bottom" constant="45" id="ifo-Oq-vN6"/>
                             <constraint firstItem="JWZ-wQ-QHh" firstAttribute="leading" secondItem="lPB-5P-nO2" secondAttribute="leading" id="iga-iZ-b84"/>
                             <constraint firstItem="CeL-91-oAi" firstAttribute="leading" secondItem="lPB-5P-nO2" secondAttribute="leading" id="kAr-se-Xrg"/>
                             <constraint firstItem="cMZ-95-uXE" firstAttribute="top" secondItem="DgO-Mp-e0z" secondAttribute="bottom" constant="20" id="kuw-gh-bxW"/>
@@ -318,9 +289,6 @@
                         <viewLayoutGuide key="safeArea" id="lPB-5P-nO2"/>
                     </view>
                     <connections>
-                        <outlet property="algorithm1Label" destination="yoG-AA-TJk" id="hxD-7h-8UN"/>
-                        <outlet property="algorithm2Label" destination="hXK-GR-7Lg" id="rLi-LE-36D"/>
-                        <outlet property="algorithm3Label" destination="aJz-7O-XMj" id="5bH-wM-JLO"/>
                         <outlet property="assetAverageLabel" destination="DgO-Mp-e0z" id="ivL-Ox-EtZ"/>
                         <outlet property="assetHighLabel" destination="CeL-91-oAi" id="Vnv-2A-7Tq"/>
                         <outlet property="assetLowLabel" destination="JWZ-wQ-QHh" id="aFA-8d-AWZ"/>
@@ -329,9 +297,13 @@
                         <outlet property="assetTickerLabel" destination="ZJC-r8-fVI" id="WLp-HM-WUK"/>
                         <outlet property="currentAlgorithmInvestedLabel" destination="cMZ-95-uXE" id="99d-DM-Pk1"/>
                         <outlet property="investedValueLabel" destination="GQe-rP-lMd" id="Z4k-SU-QMh"/>
+                        <outlet property="tradeButton" destination="FFf-ij-5Xl" id="lpb-bN-jpR"/>
+                        <segue destination="GRE-8V-02b" kind="unwind" identifier="unwindToSVC" unwindAction="unwindToSearchViewControllerWithSegue:" id="Bh6-s8-FcE"/>
+                        <segue destination="GRE-8V-02b" kind="unwind" identifier="unwindToPTVC" unwindAction="unwindtoPortfolioTableViewControllerWithSegue:" id="Tre-mJ-R3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nG-oX-FVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GRE-8V-02b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="507.79610194902551"/>
         </scene>

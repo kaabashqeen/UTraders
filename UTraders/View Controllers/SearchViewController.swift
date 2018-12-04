@@ -10,6 +10,9 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SearchCompanyDataProtocol {
 
+    
+    var stocks: [Asset] = []
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     
@@ -18,6 +21,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(stocks)
         self.searchDataSession.delegate = self
         
         // Do any additional setup after loading the view.
@@ -47,6 +51,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
     }
     
+    @IBAction func unwindToSearchViewController(segue: UIStoryboardSegue) {
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print()
         print("START SEGUE")
@@ -57,6 +64,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             print("3")
             print(self.companySearchResults[indexPath.row].ticker)
             vc.current_company = self.companySearchResults[indexPath.row].ticker
+            vc.stocks = stocks
             print("4")
         }
     }
@@ -86,7 +94,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchDataSession.getSearchData(identifier: searchTextQuery)
         dispatch_queue_main_t.main.async() {
             self.searchTableView.reloadData()
-            self.searchTableView.performSelector(onMainThread: #selector(self.searchTableView.reloadData), with: nil, waitUntilDone: true)
         }
         
 

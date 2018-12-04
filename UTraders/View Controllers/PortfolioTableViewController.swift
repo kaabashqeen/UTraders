@@ -12,9 +12,36 @@ import CoreData
 
 class PortfolioTableViewController: UITableViewController {
     
+
+    var stocks: [Asset] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //loadPortfolio()
+        var apple = Asset()
+        apple.ticker = "AAPL"
+        apple.numberOfShares = 3
+        apple.valueInvested = 300.2
+        apple.company = "AAPL"
+        stocks.append(apple)
+    }
+
+    
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
+        return stocks.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath)
+        -> UITableViewCell {
+            
+            let cell =
+                tableView.dequeueReusableCell(withIdentifier: "AssetCell",
+                                              for: indexPath) as! PortfolioAssetTableViewCell
+            cell.portfolioAssetName?.text = "\(stocks[indexPath.row].ticker!) (\(stocks[indexPath.row].numberOfShares!))"
+            cell.portfolioAssetValue?.text = "\(stocks[indexPath.row].valueInvested!)"
+            return cell
     }
     
 //    func loadAdventurers() {
@@ -42,6 +69,8 @@ class PortfolioTableViewController: UITableViewController {
     
     @IBOutlet weak var PotfolioView: UIView!
     @IBOutlet weak var PortfolioValueLabel: UILabel!
+    
+    
     @IBOutlet weak var newTrade: UIBarButtonItem!
     @IBOutlet weak var settings: UIBarButtonItem!
     
@@ -49,9 +78,31 @@ class PortfolioTableViewController: UITableViewController {
         performSegue(withIdentifier: "searchsegue", sender: nil)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AssetCell", for: indexPath)
-        return cell
+    @IBAction func unwindtoPortfolioTableViewController(segue: UIStoryboardSegue) {
+        
+        if let vc = segue.source as? AssetViewController {
+            self.stocks = vc.stocks
+            tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print()
+        print("START SEGUE")
+        print("1")
+        if let vc = segue.destination as? SearchViewController {
+            print("2")
+//            guard let indexPath = searchTableView.indexPathForSelectedRow else { return }
+            print("3")
+//            print(self.companySearchResults[indexPath.row].ticker)
+            vc.stocks = stocks
+            print("4")
+        }
+        if let vc = segue.destination as? AssetViewController {
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            vc.current_company = stocks[indexPath.row].ticker!
+            print(stocks[indexPath.row])
+        }
     }
     
 
