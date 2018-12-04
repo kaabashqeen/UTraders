@@ -62,6 +62,20 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
     var current_price: Float = 0.0
     var current_ticker: String = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.assetTickerLabel.text = ""
+        self.assetPriceLabel.text = ""
+        self.assetHighLabel.text = ""
+        self.assetLowLabel.text = ""
+
+        self.assetAverageLabel.text = ""
+        self.assetOpenLabel.text = ""
+        self.currentAlgorithmInvestedLabel.text = ""
+        
+        self.investedValueLabel.text = ""
+        self.tradeButton.isHidden = true
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -126,13 +140,13 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         //self.weatherDataSession.delegate = self
         self.stockDataSession.delegate = self
-        print(current_company)
-        current_company = "AAPL"
-        current_ticker = "AAPL"
-        stockDataSession.getAssetData(identifier: "AAPL")
+        print("HEY", current_company)
+        stockDataSession.getAssetData(identifier: current_company)
+
         
     }
 
@@ -198,8 +212,16 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
         
     }
     
+    @IBAction func windToAssetViewController(segue: UIStoryboardSegue) {
+
+        if let vc = segue.source as? SearchViewController {
+            self.current_company = vc.company_clicked
+        }
+    }
+    
     
     func stockDataHandler(data: AssetData) {
+
         print("hello \(data.high)")
         let open = data.open
         let high = data.high
@@ -210,7 +232,11 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
         self.current_price = close
         
         DispatchQueue.main.async {
-            self.assetPriceLabel.text = "Close: \(Double(String(format: "%.2f", close)))"
+            self.investedValueLabel.text = "Invested: 0.00"
+            self.tradeButton.isHidden = false
+            
+            self.assetTickerLabel.text = self.current_company
+            self.assetPriceLabel.text = "Close: \(Double(String(format: "%.2f", close))!)"
             self.assetHighLabel.text = "High: \(high)"
             self.assetLowLabel.text = "Low: \(low)"
             var myDouble = (open + high)/2

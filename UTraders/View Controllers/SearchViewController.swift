@@ -12,6 +12,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     var stocks: [Asset] = []
+    var initialState: [Company] = []
+    var searching = false
+    var company_clicked = ""
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
@@ -29,25 +32,37 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return companySearchResults.count
+        if searching {
+            return companySearchResults.count
+        } else {
+            return initialState.count
+        }
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "company", for: indexPath) as! companySearchTableViewCell
-        if indexPath.count <= companySearchResults.count {
-            if companySearchResults.count == 0{
-                return cell
+        if searching {
+            if indexPath.count <= companySearchResults.count {
+                if companySearchResults.count == 0{
+                    return cell
+                } else {
+                    let company = companySearchResults[indexPath.row]
+                    //print("check",company)
+                    cell.companyNameLabel.text = company.name
+                    cell.companyTickerLabel.text = company.ticker
+                    return cell
+                    
+                }
             } else {
-                let company = companySearchResults[indexPath.row]
-                cell.companyNameLabel.text = company.name
-                cell.companyTickerLabel.text = company.ticker
                 return cell
-                
             }
         } else {
-            return cell
+            cell.companyNameLabel.text = ""
+            cell.companyTickerLabel.text = ""
         }
+        return cell
 
     }
     
@@ -55,28 +70,48 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print()
-        print("START SEGUE")
-        print("1")
-        if let vc = segue.destination as? AssetViewController {
-            print("2")
-            guard let indexPath = searchTableView.indexPathForSelectedRow else { return }
-            print("3")
-            print(self.companySearchResults[indexPath.row].ticker)
-            vc.current_company = self.companySearchResults[indexPath.row].ticker
-            vc.stocks = stocks
-            print("4")
+        dispatch_queue_main_t.main.async() {
+            print()
+            print("START SEGUE")
+            if let vc = segue.destination as? AssetViewController {
+//                guard let indexPath = self.searchTableView.indexPathForSelectedRow else { return }
+//                print("3")
+//                print(self.companySearchResults[indexPath.row].ticker)
+//                print(indexPath.row)
+//                print(self.companySearchResults)
+//                vc.current_company = self.companySearchResults[indexPath.row].ticker
+                vc.current_company = self.company_clicked
+                print(vc.current_company)
+                print("...")
+            }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        self.company_clicked = self.companySearchResults[indexPath.row].ticker
+        performSegue(withIdentifier: "showAVCSegue", sender: self)
+        print(self.company_clicked)
+        return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.company_clicked = self.companySearchResults[indexPath.row].ticker
+        //print(self.company_clicked)
+        
     }
 
     func searchCompanyDataHandler(data: SearchCompanyData) {
-        companySearchResults = data.companies
-        if companySearchResults.count > 15{
-            companySearchResults = Array(companySearchResults[0 ..< 14])
+        dispatch_queue_main_t.main.async() {
+            self.companySearchResults = data.companies
+            if self.companySearchResults.count > 15{
+                self.companySearchResults = Array(self.companySearchResults[0 ..< 14])
+            }
+            else {
+                self.companySearchResults = Array(self.companySearchResults[0 ..< self.companySearchResults.endIndex])
+            }
+            
         }
-        else {
-            companySearchResults = Array(companySearchResults[0 ..< companySearchResults.endIndex])
-        }
+        
     }
     
     func searchCompanyDataResponseErrorHandler(error: String) {
@@ -89,11 +124,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 //    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("2", searchText)
+        searching = true
+//        let totalRows = self.searchTableView.numberOfRows(inSection: 0)
+//        for row in (0..<totalRows).reversed() {
+//            searchTableView.deleteRows(at: [IndexPath(row: row, section: 0)], with: .fade)
+//        }
         let searchTextQuery = searchText.replacingOccurrences(of: " ", with: "_")
+        print(searchTextQuery)
         searchDataSession.getSearchData(identifier: searchTextQuery)
         dispatch_queue_main_t.main.async() {
             self.searchTableView.reloadData()
+//            let totalRows = self.searchTableView.numberOfRows(inSection: 0)
+//            for row in 0..<totalRows {
+//                self.searchTableView.selectRow(at: IndexPath(row: row, section: 0), animated: false, scrollPosition: UITableView.ScrollPosition.none)
+//            }
+//            self.searchTableView.reloadRows(at: self.searchTableView.indexPathsForSelectedRows!, with: UITableView.RowAnimation.automatic)
+            //print(self.companySearchResults)
         }
         
 
