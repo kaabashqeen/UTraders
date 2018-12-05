@@ -25,12 +25,12 @@ class PortfolioTableViewController: UITableViewController {
         
         self.PortfolioValueLabel.text = String(self.investments.portfolioValue)
         //loadPortfolio
-//        let apple = Asset()
-//        apple.ticker = "AAPL"
-//        apple.numberOfShares = 3
-//        apple.valueInvested = 300.2
-//        apple.company = "AAPL"
-//        stocks.append(apple)
+        let apple = Asset()
+        apple.ticker = "AAPL"
+        apple.numberOfShares = 3
+        apple.valueInvested = 300.2
+        apple.company = "AAPL"
+        stocks.append(apple)
     }
 
     
@@ -74,9 +74,23 @@ class PortfolioTableViewController: UITableViewController {
 //    var assets: NSManagedObject = nil
     
     
-    @IBOutlet weak var PotfolioView: UIView!
+    @IBOutlet weak var PortfolioView: UIView!
+    @IBOutlet weak var ValueView: UIView!
+    @IBOutlet weak var PortfolioGraphView: PortfolioDisplayView!
     @IBOutlet weak var PortfolioValueLabel: UILabel!
+    @IBOutlet weak var PortfolioSkewLabel: UILabel!
     
+    var isGraphViewShowing = false
+    @IBAction func portfolioViewSwipe(_ gesture: UISwipeGestureRecognizer?){
+        if isGraphViewShowing {
+            //hide graph
+            UIView.transition(from: PortfolioGraphView, to: ValueView, duration: 1.0, options:[.transitionFlipFromLeft, .showHideTransitionViews], completion:nil)
+        } else {
+            //show graph
+        UIView.transition(from: ValueView, to: PortfolioGraphView, duration: 1.0, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion:nil)
+        }
+        isGraphViewShowing = !isGraphViewShowing
+    }
     
     @IBOutlet weak var newTrade: UIBarButtonItem!
     @IBOutlet weak var settings: UIBarButtonItem!
@@ -108,8 +122,8 @@ class PortfolioTableViewController: UITableViewController {
         }
         if let vc = segue.destination as? AssetViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else {return}
-            vc.current_company = stocks[indexPath.row].ticker!
-            print(stocks[indexPath.row])
+            vc.current_company = investments.assets[indexPath.row].ticker!
+            print(investments.assets[indexPath.row])
         }
         if let vc = segue.destination as? SettingsViewController {
             vc.investments = self.investments

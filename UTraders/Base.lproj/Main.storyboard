@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,26 +105,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Tq6-FA-fzh">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Tq6-FA-fzh" userLabel="Portfolio View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmH-Db-I4M">
-                                    <rect key="frame" x="146" y="70" width="82" height="27"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7V-gp-v8y" userLabel="Value View">
+                                    <rect key="frame" x="27.5" y="20" width="320" height="160"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmH-Db-I4M">
+                                            <rect key="frame" x="0.0" y="62" width="160" height="36"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8W-pd-E1O">
+                                            <rect key="frame" x="160" y="62" width="160" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Portfolio Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB0-1F-zWu">
+                                            <rect key="frame" x="63" y="18" width="194" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="HmH-Db-I4M" firstAttribute="centerY" secondItem="C7V-gp-v8y" secondAttribute="centerY" id="38P-AC-5eO"/>
+                                        <constraint firstAttribute="width" constant="320" id="3Oj-fy-dTe"/>
+                                        <constraint firstItem="HmH-Db-I4M" firstAttribute="trailing" secondItem="C7V-gp-v8y" secondAttribute="centerX" id="JmX-2O-VbT"/>
+                                        <constraint firstItem="HmH-Db-I4M" firstAttribute="leading" secondItem="C7V-gp-v8y" secondAttribute="leading" id="Q1d-9D-bZo"/>
+                                        <constraint firstItem="sB0-1F-zWu" firstAttribute="centerX" secondItem="C7V-gp-v8y" secondAttribute="centerX" id="QD4-PL-r2X"/>
+                                        <constraint firstItem="HmH-Db-I4M" firstAttribute="top" secondItem="sB0-1F-zWu" secondAttribute="bottom" constant="20" id="Qqj-1W-5da"/>
+                                        <constraint firstAttribute="trailing" secondItem="t8W-pd-E1O" secondAttribute="trailing" id="gpK-5d-zg5"/>
+                                        <constraint firstItem="t8W-pd-E1O" firstAttribute="leading" secondItem="C7V-gp-v8y" secondAttribute="centerX" id="kIc-Wo-5Oj"/>
+                                        <constraint firstAttribute="height" constant="160" id="sVP-96-khw"/>
+                                        <constraint firstItem="t8W-pd-E1O" firstAttribute="centerY" secondItem="C7V-gp-v8y" secondAttribute="centerY" id="t2W-L0-nTM"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI8-iV-e6V" customClass="PortfolioDisplayView" customModule="UTraders" customModuleProvider="target">
+                                    <rect key="frame" x="27" y="20" width="320" height="160"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="320" id="7gg-ge-nUN"/>
+                                        <constraint firstAttribute="height" constant="160" id="HUs-c1-ora"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                            <color key="value" red="1" green="0.83921568627450982" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                            <color key="value" red="0.97254901960784312" green="0.59215686274509804" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.76470588235294112" green="0.85098039215686272" blue="0.94117647058823528" alpha="0.3515625" colorSpace="custom" customColorSpace="displayP3"/>
+                            <gestureRecognizers/>
                             <constraints>
-                                <constraint firstItem="HmH-Db-I4M" firstAttribute="centerY" secondItem="Tq6-FA-fzh" secondAttribute="centerY" id="5Kl-g2-Kxj"/>
-                                <constraint firstItem="HmH-Db-I4M" firstAttribute="centerX" secondItem="Tq6-FA-fzh" secondAttribute="centerX" id="pvX-o8-jMp"/>
+                                <constraint firstItem="C7V-gp-v8y" firstAttribute="centerY" secondItem="Tq6-FA-fzh" secondAttribute="centerY" id="AeK-vq-Bzg"/>
+                                <constraint firstItem="XI8-iV-e6V" firstAttribute="centerX" secondItem="Tq6-FA-fzh" secondAttribute="centerX" id="VQY-8S-I5f"/>
+                                <constraint firstItem="C7V-gp-v8y" firstAttribute="centerX" secondItem="Tq6-FA-fzh" secondAttribute="centerX" id="g9n-C5-Plm"/>
+                                <constraint firstItem="XI8-iV-e6V" firstAttribute="centerY" secondItem="Tq6-FA-fzh" secondAttribute="centerY" id="xTo-8c-sMO"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="ZJw-1V-lwm" appends="YES" id="HUg-BB-6h3"/>
+                            </connections>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssetCell" rowHeight="90" id="0Nm-6f-h9J" customClass="PortfolioAssetTableViewCell" customModule="UTraders" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="195" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="228" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Nm-6f-h9J" id="4vK-bJ-OGA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -144,7 +197,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.76470588235294112" green="0.85098039215686272" blue="0.94117647058823528" alpha="0.35227772887323944" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Stock Cell"/>
                                 <connections>
                                     <outlet property="portfolioAssetName" destination="a5j-ut-XnU" id="c6E-9f-cM4"/>
@@ -167,7 +222,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="cJK-PB-Plu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s66-Lf-U93">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <rect key="frame" x="285" y="7" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Trade"/>
                                 <connections>
@@ -177,12 +232,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="PortfolioGraphView" destination="XI8-iV-e6V" id="sMq-DV-Gkm"/>
+                        <outlet property="PortfolioSkewLabel" destination="t8W-pd-E1O" id="zJz-kc-cOq"/>
                         <outlet property="PortfolioValueLabel" destination="HmH-Db-I4M" id="Uaq-9s-CUx"/>
-                        <outlet property="PotfolioView" destination="Tq6-FA-fzh" id="c8E-Pp-Sdk"/>
+                        <outlet property="PortfolioView" destination="Tq6-FA-fzh" id="SLm-BC-mrk"/>
+                        <outlet property="ValueView" destination="C7V-gp-v8y" id="7mk-xI-Sez"/>
                         <outlet property="settings" destination="K3V-1Z-cul" id="eFi-5T-RoT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1P-tL-PZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="ZJw-1V-lwm">
+                    <connections>
+                        <action selector="portfolioViewSwipe:" destination="qL9-09-Uoq" id="xkx-Df-4mW"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1232.8" y="142.57871064467767"/>
         </scene>
