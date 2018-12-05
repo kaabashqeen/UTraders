@@ -69,7 +69,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        dispatch_queue_main_t.main.async() {
+        DispatchQueue.main.async() {
             print()
             print("START SEGUE")
             if let vc = segue.destination as? AssetViewController {
@@ -86,7 +86,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath?{
+        print(indexPath.row)
+        print(companySearchResults)
         self.company_clicked = self.companySearchResults[indexPath.row].ticker
         performSegue(withIdentifier: "showAVCSegue", sender: self)
         print(self.company_clicked)
@@ -100,7 +102,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     func searchCompanyDataHandler(data: SearchCompanyData) {
-        dispatch_queue_main_t.main.async() {
+        DispatchQueue.main.async() {
             self.companySearchResults = data.companies
             if self.companySearchResults.count > 15{
                 self.companySearchResults = Array(self.companySearchResults[0 ..< 14])
@@ -131,7 +133,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let searchTextQuery = searchText.replacingOccurrences(of: " ", with: "_")
         print(searchTextQuery)
         searchDataSession.getSearchData(identifier: searchTextQuery)
-        dispatch_queue_main_t.main.async() {
+        DispatchQueue.main.async() {
             self.searchTableView.reloadData()
 //            let totalRows = self.searchTableView.numberOfRows(inSection: 0)
 //            for row in 0..<totalRows {
@@ -140,7 +142,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 //            self.searchTableView.reloadRows(at: self.searchTableView.indexPathsForSelectedRows!, with: UITableView.RowAnimation.automatic)
             //print(self.companySearchResults)
         }
-        
+
 
     }
     

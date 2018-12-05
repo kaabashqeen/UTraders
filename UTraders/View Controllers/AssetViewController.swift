@@ -50,7 +50,7 @@ import Foundation
 //}
 class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    var choices = [1,2,3,4,5,6,7,8,9,10]
+    var choices = Array(1...100)
     var pickerView = UIPickerView()
     var typeValue = Int()
     
@@ -89,30 +89,7 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row == 0 {
-            typeValue = 1
-        } else if row == 1 {
-            typeValue = 2
-        } else if row == 2 {
-            typeValue = 3
-        } else if row == 3 {
-            typeValue = 4
-        } else if row == 4 {
-            typeValue = 5
-        } else if row == 5 {
-            typeValue = 6
-        } else if row == 6 {
-            typeValue = 7
-        } else if row == 7 {
-            typeValue = 8
-        } else if row == 8 {
-            typeValue = 9
-        } else if row == 9 {
-            typeValue = 10
-        } else if row == 10 {
-            typeValue = 11
-        }
-        
+        typeValue = row + 1
         
     }
     
@@ -199,7 +176,7 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
         alert.addAction(UIAlertAction(title: "Trade", style: .default, handler: { (UIAlertAction) in
             
             print("You selected ", self.typeValue, self.current_company)
-            var assetToTrade = Asset()
+            let assetToTrade = Asset()
             assetToTrade.numberOfShares = self.typeValue
             assetToTrade.ticker = self.current_company
             assetToTrade.valueInvested = Float(assetToTrade.numberOfShares!) * self.current_price
@@ -239,8 +216,8 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
             self.assetPriceLabel.text = "Close: \(Double(String(format: "%.2f", close))!)"
             self.assetHighLabel.text = "High: \(high)"
             self.assetLowLabel.text = "Low: \(low)"
-            var myDouble = (open + high)/2
-            var avg = Double(String(format: "%.2f", myDouble))
+            let myDouble = (open + high)/2
+            let avg = Double(String(format: "%.2f", myDouble))
             self.assetAverageLabel.text = "Average: \(avg!)"
             self.assetOpenLabel.text = "Open: \(open)"
             

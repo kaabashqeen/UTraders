@@ -74,7 +74,6 @@ class StockData {
         }
 
         let day = calendar.component(.day, from: dateToParse)
-        let time = calendar.component(.hour, from: dateToParse)
         let month = calendar.component(.month, from: dateToParse)
         let year = calendar.component(.year, from: dateToParse)
         

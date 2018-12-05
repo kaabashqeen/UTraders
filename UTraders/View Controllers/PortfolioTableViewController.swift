@@ -22,8 +22,8 @@ class PortfolioTableViewController: UITableViewController {
         
         self.PortfolioValueLabel.text = String(self.investments.portfolioValue)
         
-        //loadPortfolio()
-        var apple = Asset()
+        //loadPortfolio
+        let apple = Asset()
         apple.ticker = "AAPL"
         apple.numberOfShares = 3
         apple.valueInvested = 300.2
@@ -116,6 +116,7 @@ class PortfolioTableViewController: UITableViewController {
     @IBAction func unwindtoPTVCfromSettings(segue:UIStoryboardSegue) {
         if let vc = segue.source as? SettingsViewController {
             self.investments = vc.investments
+            self.PortfolioValueLabel.text = "\(self.investments.portfolioValue)"
         }
     }
     

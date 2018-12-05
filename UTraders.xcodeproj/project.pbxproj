@@ -115,12 +115,12 @@
 				D6F6F29F2194EEF000FF777A /* Main.storyboard */,
 				D6F6F29B2194EEF000FF777A /* AppDelegate.swift */,
 				5F8F3E3221B6F0C000EA1687 /* Models */,
-				5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */,
 				5F8F3E2F21B645C100EA1687 /* Views */,
 				5F8F3E3121B645F300EA1687 /* API */,
 				5F8F3E3021B645DE00EA1687 /* View Controllers */,
 				D6F6F2A22194EEF200FF777A /* Assets.xcassets */,
 				D6F6F2A42194EEF200FF777A /* LaunchScreen.storyboard */,
+				5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */,
 				D6F6F2A72194EEF200FF777A /* Info.plist */,
 			);
 			path = UTraders;
@@ -358,6 +358,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UTraders/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,6 +379,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UTraders/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
