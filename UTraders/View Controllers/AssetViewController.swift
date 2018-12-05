@@ -54,7 +54,7 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
     var pickerView = UIPickerView()
     var typeValue = Int()
     
-    var stocks: [Asset] = []
+    var investments: Investments = Investments()
 
     
     
@@ -181,7 +181,7 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
             assetToTrade.ticker = self.current_company
             assetToTrade.valueInvested = Float(assetToTrade.numberOfShares!) * self.current_price
             assetToTrade.company = self.current_company
-            self.stocks.append(assetToTrade)
+            self.investments.assets.append(assetToTrade)
             self.performSegue(withIdentifier: "unwindToPTVC", sender: self)
             
         }))

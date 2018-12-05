@@ -12,6 +12,6 @@ class Investments {
     
     var portfolioValue: Float = 10000.00
     var investedValue: Float = 0
-    var Assets: [Asset] = []
+    var assets: [Asset] = []
     
 }

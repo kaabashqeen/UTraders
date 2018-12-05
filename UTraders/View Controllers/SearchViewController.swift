@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SearchCompanyDataProtocol {
 
-    var stocks: [Asset] = []
+    var investments: Investments = Investments()
     var initialState: [Company] = []
     var searching = false
     var company_clicked = ""
@@ -23,7 +23,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(stocks)
+        print(investments)
         self.searchDataSession.delegate = self
         
         // Do any additional setup after loading the view.
@@ -79,6 +79,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 //                print(indexPath.row)
 //                print(self.companySearchResults)
 //                vc.current_company = self.companySearchResults[indexPath.row].ticker
+                vc.investments = self.investments
                 vc.current_company = self.company_clicked
                 print(vc.current_company)
                 print("...")

@@ -16,25 +16,27 @@ class PortfolioTableViewController: UITableViewController {
     var investments = Investments()
     
     var stocks: [Asset] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.PortfolioValueLabel.text = String(self.investments.portfolioValue)
+        investments.assets = stocks
         
+        self.PortfolioValueLabel.text = String(self.investments.portfolioValue)
         //loadPortfolio
-        let apple = Asset()
-        apple.ticker = "AAPL"
-        apple.numberOfShares = 3
-        apple.valueInvested = 300.2
-        apple.company = "AAPL"
-        stocks.append(apple)
+//        let apple = Asset()
+//        apple.ticker = "AAPL"
+//        apple.numberOfShares = 3
+//        apple.valueInvested = 300.2
+//        apple.company = "AAPL"
+//        stocks.append(apple)
     }
 
     
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return stocks.count
+        return investments.assets.count
     }
     
     override func tableView(_ tableView: UITableView,
@@ -44,8 +46,8 @@ class PortfolioTableViewController: UITableViewController {
             let cell =
                 tableView.dequeueReusableCell(withIdentifier: "AssetCell",
                                               for: indexPath) as! PortfolioAssetTableViewCell
-            cell.portfolioAssetName?.text = "\(stocks[indexPath.row].ticker!) (\(stocks[indexPath.row].numberOfShares!))"
-            cell.portfolioAssetValue?.text = "\(stocks[indexPath.row].valueInvested!)"
+            cell.portfolioAssetName?.text = "\(investments.assets[indexPath.row].ticker!) (\(investments.assets[indexPath.row].numberOfShares!))"
+            cell.portfolioAssetValue?.text = "\(investments.assets[indexPath.row].valueInvested!)"
             return cell
     }
     
@@ -86,7 +88,8 @@ class PortfolioTableViewController: UITableViewController {
     @IBAction func unwindtoPortfolioTableViewController(segue: UIStoryboardSegue) {
         
         if let vc = segue.source as? AssetViewController {
-            self.stocks = vc.stocks
+            self.investments = vc.investments
+            print(self.stocks)
             tableView.reloadData()
         }
     }
@@ -100,7 +103,7 @@ class PortfolioTableViewController: UITableViewController {
 //            guard let indexPath = searchTableView.indexPathForSelectedRow else { return }
             print("3")
 //            print(self.companySearchResults[indexPath.row].ticker)
-            vc.stocks = stocks
+            vc.investments = investments
             print("4")
         }
         if let vc = segue.destination as? AssetViewController {
