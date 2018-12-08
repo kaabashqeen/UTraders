@@ -10,29 +10,97 @@ import Foundation
 import UIKit
 import CoreData
 
-class PortfolioTableViewController: UITableViewController {
+class PortfolioTableViewController: UITableViewController, StockDataProtocol {
     
-
+    var investedvalueupdate: Float = 0.0
+    func stockDataHandler(data: AssetData) {
+        DispatchQueue.main.async() {
+            let open = data.open
+            let high = data.high
+            let low = data.low
+            let close = data.close
+            let volume = data.volume
+            let adjClose = data.adjClose
+            self.stocksToUpdate[self.currIdx].numberOfShares = 1
+            self.stocksToUpdate[self.currIdx].valueInvested = close
+            self.investedvalueupdate = self.stocksToUpdate[self.currIdx].valueInvested! * Float(self.investments.assets[self.currIdx].numberOfShares!)
+        }
+        
+        DispatchQueue.main.async {
+            
+//            self.investedValueLabel.text = "Invested: 0.00"
+//            self.tradeButton.isHidden = false
+//
+//            self.assetTickerLabel.text = self.current_company
+//            self.assetPriceLabel.text = "Close: \(Double(String(format: "%.2f", close))!)"
+//            self.assetHighLabel.text = "High: \(high)"
+//            self.assetLowLabel.text = "Low: \(low)"
+//            let myDouble = (open + high)/2
+//            let avg = Double(String(format: "%.2f", myDouble))
+//            self.assetAverageLabel.text = "Average: \(avg!)"
+//            self.assetOpenLabel.text = "Open: \(open)"
+            
+            
+        }
+    }
+    
+    func responseErrorHandler(error: String) {
+        return
+    }
+    
+    
+    var currStock: String = ""
+    var currIdx: Int = 0
     var investments = Investments()
     
-    var stocks: [Asset] = []
+    var stocksToUpdate: [Asset] = []
 
+    var stockDataSession = StockData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        investments.assets = stocks
+
+
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "D-DIN", size: 20)!]
+        self.stockDataSession.delegate = self
         
         self.PortfolioValueLabel.text = String(self.investments.portfolioValue)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         //loadPortfolio
-        let apple = Asset()
-        apple.ticker = "AAPL"
-        apple.numberOfShares = 3
-        apple.valueInvested = 300.2
-        apple.company = "AAPL"
-        stocks.append(apple)
+//        let apple = Asset()
+//        apple.ticker = "AAPL"
+//        apple.numberOfShares = 3
+//        apple.valueInvested = 300.2
+//        apple.company = "AAPL"
+//        investments.assets.append(apple)
+        self.stocksToUpdate = investments.assets
     }
+    
 
+    @objc func update(){
+        var count = 0
+        //print("1",self.investments.investedValue)
+        investedvalueupdate = 0
+        var check = self.investments.portfolioValue - self.investments.investedValue
+        for asset in investments.assets {
+            self.currStock = asset.ticker!
+            
+            self.currIdx = count
+            
+            print("looping", self.currStock, self.currIdx)
+            DispatchQueue.main.async() {
+                self.stockDataSession.getAssetData(identifier: self.currStock)
+            }
+            count = count+1
+        }
+        //print("2",self.investments.investedValue)
+        self.investments.portfolioValue = (investedvalueupdate - self.investments.investedValue) + self.investments.portfolioValue
+        self.PortfolioValueLabel.text = "\(self.investments.portfolioValue)"
+        self.investments.investedValue =  investedvalueupdate
+        
+        //print(check)
+        tableView.reloadData()
+    }
     
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
@@ -46,8 +114,11 @@ class PortfolioTableViewController: UITableViewController {
             let cell =
                 tableView.dequeueReusableCell(withIdentifier: "AssetCell",
                                               for: indexPath) as! PortfolioAssetTableViewCell
-            cell.portfolioAssetName?.text = "\(investments.assets[indexPath.row].ticker!) (\(investments.assets[indexPath.row].numberOfShares!))"
-            cell.portfolioAssetValue?.text = "\(investments.assets[indexPath.row].valueInvested!)"
+            cell.portfolioAssetName?.text = "\(investments.assets[indexPath.row].ticker!)"
+            cell.portfolioAssetShares?.text = "\(investments.assets[indexPath.row].numberOfShares!) Shares"
+            print(investments.assets[indexPath.row].ticker!)
+            print(stocksToUpdate[indexPath.row].valueInvested!, investments.assets[indexPath.row].valueInvested!)
+            cell.portfolioAssetValue?.text = "$\(stocksToUpdate[indexPath.row].valueInvested!) (\(stocksToUpdate[indexPath.row].valueInvested! - investments.assets[indexPath.row].valueInvested!))"
             return cell
     }
     
@@ -102,8 +173,18 @@ class PortfolioTableViewController: UITableViewController {
     @IBAction func unwindtoPortfolioTableViewController(segue: UIStoryboardSegue) {
         
         if let vc = segue.source as? AssetViewController {
+            navigationController?.setNavigationBarHidden(false, animated: false)
             self.investments = vc.investments
-            print(self.stocks)
+            self.stocksToUpdate = vc.investments.assets
+            tableView.reloadData()
+            let timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @IBAction func unwindtoPortfolioTableViewControllerfromSVC(segue: UIStoryboardSegue) {
+        
+        if let vc = segue.source as? SearchViewController {
+            self.investments = vc.investments
             tableView.reloadData()
         }
     }

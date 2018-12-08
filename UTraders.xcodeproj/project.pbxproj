@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		5F010B5921B515080055F1BF /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010B5821B515080055F1BF /* SearchData.swift */; };
 		5F010B5B21B5201C0055F1BF /* companySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */; };
+		5F4C2CC121B7AFCD00A2CB87 /* din1451alt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CBF21B7AFCD00A2CB87 /* din1451alt.ttf */; };
+		5F4C2CC221B7AFCD00A2CB87 /* din1451alt G.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC021B7AFCD00A2CB87 /* din1451alt G.ttf */; };
+		5F4C2CCC21B7B54C00A2CB87 /* D-DINCondensed-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC321B7B54B00A2CB87 /* D-DINCondensed-Bold.otf */; };
+		5F4C2CCD21B7B54C00A2CB87 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC421B7B54B00A2CB87 /* SIL Open Font License.txt */; };
+		5F4C2CCE21B7B54C00A2CB87 /* D-DINCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC521B7B54B00A2CB87 /* D-DINCondensed.otf */; };
+		5F4C2CCF21B7B54C00A2CB87 /* D-DIN-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC621B7B54B00A2CB87 /* D-DIN-Italic.otf */; };
+		5F4C2CD021B7B54C00A2CB87 /* D-DINExp.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC721B7B54B00A2CB87 /* D-DINExp.otf */; };
+		5F4C2CD121B7B54C00A2CB87 /* D-DIN-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC821B7B54B00A2CB87 /* D-DIN-Bold.otf */; };
+		5F4C2CD221B7B54C00A2CB87 /* D-DIN.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC921B7B54B00A2CB87 /* D-DIN.otf */; };
+		5F4C2CD321B7B54C00A2CB87 /* D-DINExp-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CCA21B7B54B00A2CB87 /* D-DINExp-Bold.otf */; };
+		5F4C2CD421B7B54C00A2CB87 /* D-DINExp-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CCB21B7B54C00A2CB87 /* D-DINExp-Italic.otf */; };
 		5F8F3E3421B6F0D600EA1687 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F3E3321B6F0D600EA1687 /* Asset.swift */; };
 		5F8F3E3621B7141300EA1687 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F3E3521B7141300EA1687 /* SettingsViewController.swift */; };
 		5F8F3E3821B7167800EA1687 /* Investments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F3E3721B7167800EA1687 /* Investments.swift */; };
@@ -28,6 +39,17 @@
 /* Begin PBXFileReference section */
 		5F010B5821B515080055F1BF /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companySearchTableViewCell.swift; sourceTree = "<group>"; };
+		5F4C2CBF21B7AFCD00A2CB87 /* din1451alt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din1451alt.ttf; sourceTree = "<group>"; };
+		5F4C2CC021B7AFCD00A2CB87 /* din1451alt G.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din1451alt G.ttf"; sourceTree = "<group>"; };
+		5F4C2CC321B7B54B00A2CB87 /* D-DINCondensed-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINCondensed-Bold.otf"; path = "../../../../Downloads/d-din/D-DINCondensed-Bold.otf"; sourceTree = "<group>"; };
+		5F4C2CC421B7B54B00A2CB87 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "SIL Open Font License.txt"; path = "../../../../Downloads/d-din/SIL Open Font License.txt"; sourceTree = "<group>"; };
+		5F4C2CC521B7B54B00A2CB87 /* D-DINCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINCondensed.otf"; path = "../../../../Downloads/d-din/D-DINCondensed.otf"; sourceTree = "<group>"; };
+		5F4C2CC621B7B54B00A2CB87 /* D-DIN-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DIN-Italic.otf"; path = "../../../../Downloads/d-din/D-DIN-Italic.otf"; sourceTree = "<group>"; };
+		5F4C2CC721B7B54B00A2CB87 /* D-DINExp.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINExp.otf"; path = "../../../../Downloads/d-din/D-DINExp.otf"; sourceTree = "<group>"; };
+		5F4C2CC821B7B54B00A2CB87 /* D-DIN-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DIN-Bold.otf"; path = "../../../../Downloads/d-din/D-DIN-Bold.otf"; sourceTree = "<group>"; };
+		5F4C2CC921B7B54B00A2CB87 /* D-DIN.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DIN.otf"; path = "../../../../Downloads/d-din/D-DIN.otf"; sourceTree = "<group>"; };
+		5F4C2CCA21B7B54B00A2CB87 /* D-DINExp-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINExp-Bold.otf"; path = "../../../../Downloads/d-din/D-DINExp-Bold.otf"; sourceTree = "<group>"; };
+		5F4C2CCB21B7B54C00A2CB87 /* D-DINExp-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINExp-Italic.otf"; path = "../../../../Downloads/d-din/D-DINExp-Italic.otf"; sourceTree = "<group>"; };
 		5F8F3E3321B6F0D600EA1687 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		5F8F3E3521B7141300EA1687 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5F8F3E3721B7167800EA1687 /* Investments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investments.swift; sourceTree = "<group>"; };
@@ -57,6 +79,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F4C2CBE21B7AFCD00A2CB87 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5F4C2CC821B7B54B00A2CB87 /* D-DIN-Bold.otf */,
+				5F4C2CC621B7B54B00A2CB87 /* D-DIN-Italic.otf */,
+				5F4C2CC921B7B54B00A2CB87 /* D-DIN.otf */,
+				5F4C2CC321B7B54B00A2CB87 /* D-DINCondensed-Bold.otf */,
+				5F4C2CC521B7B54B00A2CB87 /* D-DINCondensed.otf */,
+				5F4C2CCA21B7B54B00A2CB87 /* D-DINExp-Bold.otf */,
+				5F4C2CCB21B7B54C00A2CB87 /* D-DINExp-Italic.otf */,
+				5F4C2CC721B7B54B00A2CB87 /* D-DINExp.otf */,
+				5F4C2CC421B7B54B00A2CB87 /* SIL Open Font License.txt */,
+				5F4C2CBF21B7AFCD00A2CB87 /* din1451alt.ttf */,
+				5F4C2CC021B7AFCD00A2CB87 /* din1451alt G.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		5F8F3E2F21B645C100EA1687 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +162,7 @@
 				5F8F3E3121B645F300EA1687 /* API */,
 				5F8F3E3021B645DE00EA1687 /* View Controllers */,
 				D6F6F2A22194EEF200FF777A /* Assets.xcassets */,
+				5F4C2CBE21B7AFCD00A2CB87 /* fonts */,
 				D6F6F2A42194EEF200FF777A /* LaunchScreen.storyboard */,
 				5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */,
 				D6F6F2A72194EEF200FF777A /* Info.plist */,
@@ -188,9 +229,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4C2CCE21B7B54C00A2CB87 /* D-DINCondensed.otf in Resources */,
+				5F4C2CCD21B7B54C00A2CB87 /* SIL Open Font License.txt in Resources */,
 				D6F6F2A62194EEF200FF777A /* LaunchScreen.storyboard in Resources */,
+				5F4C2CD321B7B54C00A2CB87 /* D-DINExp-Bold.otf in Resources */,
+				5F4C2CCC21B7B54C00A2CB87 /* D-DINCondensed-Bold.otf in Resources */,
+				5F4C2CD221B7B54C00A2CB87 /* D-DIN.otf in Resources */,
+				5F4C2CC121B7AFCD00A2CB87 /* din1451alt.ttf in Resources */,
 				D6F6F2A32194EEF200FF777A /* Assets.xcassets in Resources */,
+				5F4C2CD421B7B54C00A2CB87 /* D-DINExp-Italic.otf in Resources */,
 				D6F6F2A12194EEF000FF777A /* Main.storyboard in Resources */,
+				5F4C2CD121B7B54C00A2CB87 /* D-DIN-Bold.otf in Resources */,
+				5F4C2CC221B7AFCD00A2CB87 /* din1451alt G.ttf in Resources */,
+				5F4C2CD021B7B54C00A2CB87 /* D-DINExp.otf in Resources */,
+				5F4C2CCF21B7B54C00A2CB87 /* D-DIN-Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +325,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -293,10 +345,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -337,6 +391,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -348,9 +403,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

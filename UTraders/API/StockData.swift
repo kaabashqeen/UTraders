@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct MarketCap: Decodable {
+    let identifier: String
+    let item: String
+    let value: Float
+}
+
 struct AssetData: Decodable {
     let open: Float
     let high: Float
@@ -35,6 +41,7 @@ struct AssetStock: Decodable {
 }
 protocol StockDataProtocol {
     func stockDataHandler(data:AssetData)
+    //func marketCapHandler(data:)
     func responseErrorHandler(error:String)
 }
 
@@ -42,6 +49,7 @@ class StockData {
     private let urlSession = URLSession.shared
     private let apiKey = "&api_key=OjM5OTI4ZDkyZGY3MWFkNjczODk1NzYzYjU2MTA2NThm"
     private let stockUrl = "https://api.intrinio.com/prices?identifier="
+    private let marketCapUrl = "https://api.intrinio.com/data_point?identifier="
     
     var delegate:StockDataProtocol? = nil
     
@@ -72,6 +80,8 @@ class StockData {
                 dateToParse = dateToParse - 1
             }
         }
+        
+        let number = Int.random(in: 3 ... 4)
 
         let day = calendar.component(.day, from: dateToParse)
         let month = calendar.component(.month, from: dateToParse)
@@ -82,15 +92,20 @@ class StockData {
         if monthString.count == 1 {
             monthString = "0" + monthString
         }
-        
-        var dayString = String(day)
+//        let number = Int.random(in: 6 ... 9)
+//        var daychange = day-number
+        var days = number
+        var dayString = String(days)
         if dayString.count == 1 {
             dayString = "0" + dayString
         }
-        
-        let date = "&start_date=" + yearString + monthString + dayString
+        var endString = ""
+        if days == 3{
+            endString = "&end_date="+yearString+monthString+dayString
+        }
+        let date = "&start_date=" + yearString + monthString + dayString + endString
         let urlPath = self.stockUrl + identifier + date + self.apiKey
-        print(urlPath)
+        //print(urlPath)
         
         guard let url = URL(string: urlPath) else { //point 1
             print("Fail at point 1")
@@ -112,5 +127,26 @@ class StockData {
             }
             }.resume()
     }
-    
+    /*
+    func getMarketCap(identifier: String){
+        let urlPath = self.marketCapUrl + identifier + "item=marketcap" + self.apiKey
+        
+        guard let url = URL(string: urlPath) else { //point 1
+            print("Fail at point 1")
+            return
+        }
+        
+        urlSession.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { //point 2
+                print("Fail at point 2")
+                return
+            }
+            do {
+                let marketCapData = try JSONDecoder.init().decode(AssetStock.self, from data)
+                self.delegate
+            } catch {
+                
+            }
+    }
+    */
 }

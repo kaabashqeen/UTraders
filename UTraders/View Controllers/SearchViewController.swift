@@ -22,6 +22,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var companySearchResults = [Company]()
     
     override func viewDidLoad() {
+        //self.searchBar.setImage(UIImage(named: "search"), for: .clear, state: UIControl.State.normal)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
         print(investments)
         self.searchDataSession.delegate = self
@@ -42,6 +44,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "company", for: indexPath) as! companySearchTableViewCell
+        cell.layer.borderColor = UIColor(red: 255, green: 218, blue: 169, alpha: 1).cgColor
+//        cell.sizeThatFits(CGSize(width: self.searchTableView.frame.size.width, height: 74))
+//        cell.sizeToFit()
         if searching {
             if indexPath.count <= companySearchResults.count {
                 if companySearchResults.count == 0{
@@ -66,12 +71,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func unwindToSearchViewController(segue: UIStoryboardSegue) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         DispatchQueue.main.async() {
             print()
             print("START SEGUE")
+            if let vc = segue.destination as? PortfolioTableViewController {
+                self.navigationController?.setNavigationBarHidden(false, animated: false)
+                
+            }
             if let vc = segue.destination as? AssetViewController {
 //                guard let indexPath = self.searchTableView.indexPathForSelectedRow else { return }
 //                print("3")
@@ -82,7 +92,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 vc.investments = self.investments
                 vc.current_company = self.company_clicked
                 print(vc.current_company)
-                print("...")
+                self.navigationController?.setNavigationBarHidden(false, animated: false)
+                vc.viewDidLoad()
             }
         }
     }
@@ -91,17 +102,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         print(indexPath.row)
         print(companySearchResults)
         self.company_clicked = self.companySearchResults[indexPath.row].ticker
-        performSegue(withIdentifier: "showAVCSegue", sender: self)
+        //performSegue(withIdentifier: "showAVCSegue", sender: self)
         print(self.company_clicked)
         return indexPath
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.company_clicked = self.companySearchResults[indexPath.row].ticker
+
         //print(self.company_clicked)
         
     }
-
+    
     func searchCompanyDataHandler(data: SearchCompanyData) {
         DispatchQueue.main.async() {
             self.companySearchResults = data.companies
@@ -159,6 +171,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print("3", searchBar.text!)
         searchBar.text = ""
+        performSegue(withIdentifier: "unwindtoPTVCfromSVC", sender: self)
         DispatchQueue.main.async {
             self.searchTableView.reloadData()
             self.searchTableView.beginUpdates()

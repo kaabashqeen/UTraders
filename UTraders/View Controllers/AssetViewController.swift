@@ -117,7 +117,7 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view, typically from a nib.
         //self.weatherDataSession.delegate = self
         self.stockDataSession.delegate = self
@@ -171,7 +171,15 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
         alert.view.addSubview(pickerFrame)
         pickerFrame.dataSource = self
         pickerFrame.delegate = self
-
+        let addFunds = UIAlertAction(title: "Add Funds", style: .default) {
+                                            [unowned self] action in
+                                            
+                                            self.performSegue(withIdentifier: "unwindToPTVC", sender: self)
+        }
+        let alertNoFunds = UIAlertController(title: "Not Enough Sufficient Funds", message: "The requested investment cannot be fulfilled.", preferredStyle:.alert)
+        
+        alertNoFunds.addAction(addFunds)
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Trade", style: .default, handler: { (UIAlertAction) in
             
@@ -179,23 +187,32 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
             let assetToTrade = Asset()
             assetToTrade.numberOfShares = self.typeValue
             assetToTrade.ticker = self.current_company
-            assetToTrade.valueInvested = Float(assetToTrade.numberOfShares!) * self.current_price
-            assetToTrade.company = self.current_company
-            self.investments.assets.append(assetToTrade)
-            self.performSegue(withIdentifier: "unwindToPTVC", sender: self)
+            assetToTrade.valueInvested = self.current_price
+            if (Float(assetToTrade.numberOfShares!) * assetToTrade.valueInvested! + self.investments.investedValue > self.investments.portfolioValue) {
+                self.present(alertNoFunds, animated: true)
+            } else {
+                assetToTrade.company = self.current_company
+                self.investments.investedValue = Float(assetToTrade.numberOfShares!) * assetToTrade.valueInvested! + self.investments.investedValue
+
+                self.investments.assets.append(assetToTrade)
+                print(self.investments.assets)
+                self.performSegue(withIdentifier: "unwindToPTVC", sender: self)
+            }
             
         }))
         present(alert, animated: true)
         
     }
     
-    @IBAction func windToAssetViewController(segue: UIStoryboardSegue) {
-
-        if let vc = segue.source as? SearchViewController {
-            self.current_company = vc.company_clicked
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SearchViewController {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     func stockDataHandler(data: AssetData) {
 
@@ -213,7 +230,7 @@ class AssetViewController: UIViewController, StockDataProtocol, UIPickerViewDele
             self.tradeButton.isHidden = false
             
             self.assetTickerLabel.text = self.current_company
-            self.assetPriceLabel.text = "Close: \(Double(String(format: "%.2f", close))!)"
+            self.assetPriceLabel.text = "Current: \(Double(String(format: "%.2f", close))!)"
             self.assetHighLabel.text = "High: \(high)"
             self.assetLowLabel.text = "Low: \(low)"
             let myDouble = (open + high)/2
