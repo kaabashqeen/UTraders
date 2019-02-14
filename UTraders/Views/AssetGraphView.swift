@@ -1,21 +1,31 @@
 //
-//  PortfolioDisplayView.swift
+//  AssetGraphView.swift
 //  UTraders
 //
-//  Created by Izzo, Christopher J on 12/4/18.
+//  Created by Izzo, Christopher J on 12/9/18.
 //  Copyright © 2018 CJ Izzo. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class PortfolioDisplayView: UIView {
+@IBDesignable class AssetGraphView: UIView{
     
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
-    var graphPoints:[Float] = [0.0, 0.0]
+    var graphPoints:[Float] = [0.0, 1.0]
     var dates:[String] = [""]
+
+    
+    // var stockWeekDataSession = StockWeekData()
+    
+    
+    
+    
     
     override func draw(_ rect: CGRect) {
+        // self.stockWeekDataSession.delegate = self
+        //   stockWeekDataSession.getAssetWeekData(identifier: "AAPL")
+        
         let width = rect.width
         let height = rect.height
         
@@ -43,7 +53,9 @@ import UIKit
         
         let topBorder = 35.0 as CGFloat
         let bottomBorder = 25.0 as CGFloat
+        print(graphPoints)
         let graphHeight = height - topBorder - bottomBorder
+        print(graphPoints)
         let maxValue = graphPoints.max()!
         let columnYPoint = { (graphPoint: Float) -> CGFloat in
             let y = (CGFloat(graphPoint) - CGFloat(self.graphPoints.min()!)) / (CGFloat(maxValue) - CGFloat(self.graphPoints.min()!)) * graphHeight
@@ -73,6 +85,7 @@ import UIKit
         clippingPath.close()
         
         clippingPath.addClip()
+        
         
         let highestYPoint = columnYPoint(maxValue)
         let graphStartPoint = CGPoint(x: margin, y: highestYPoint)

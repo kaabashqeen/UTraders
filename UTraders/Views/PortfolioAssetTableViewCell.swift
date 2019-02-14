@@ -13,5 +13,6 @@ class PortfolioAssetTableViewCell: UITableViewCell {
     @IBOutlet weak var portfolioAssetName: UILabel!
     @IBOutlet weak var portfolioAssetValue: UILabel!
     @IBOutlet weak var portfolioAssetShares: UILabel!
+    @IBOutlet weak var portfolioView: UIView!
     
 }

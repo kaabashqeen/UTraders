@@ -28,7 +28,7 @@ protocol SearchCompanyDataProtocol {
 
 class SearchData {
     private let urlSession = URLSession.shared
-    private let apiKey = "&api_key=OjM5OTI4ZDkyZGY3MWFkNjczODk1NzYzYjU2MTA2NThm"
+    private let apiKey = "&api_key=OjA5MGVkNzRkMzZhMzU0Y2VmZmY4YjNhNmJlYmVmODM4"
     private let companyURL = "https://api.intrinio.com/securities/search?conditions=name~contains~"
     
     var delegate:SearchCompanyDataProtocol? = nil

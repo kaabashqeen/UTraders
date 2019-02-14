@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G3025" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Portfolio" representedClassName="Portfolio" syncable="YES" codeGenerationType="class">
+        <attribute name="investedValue" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="portfolioValue" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="investedStocks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stock" inverseName="portfolio" inverseEntity="Stock" syncable="YES"/>
+    </entity>
+    <entity name="Stock" representedClassName="Stock" syncable="YES" codeGenerationType="class">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfShares" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ticker" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valueInvested" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="portfolio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Portfolio" inverseName="investedStocks" inverseEntity="Portfolio" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Portfolio" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Stock" positionX="-18" positionY="54" width="128" height="120"/>
+    </elements>
+</model>

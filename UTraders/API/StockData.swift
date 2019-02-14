@@ -40,14 +40,14 @@ struct AssetStock: Decodable {
     
 }
 protocol StockDataProtocol {
-    func stockDataHandler(data:AssetData)
+    func stockDataHandler(data:AssetData, stock: String)
     //func marketCapHandler(data:)
     func responseErrorHandler(error:String)
 }
 
 class StockData {
     private let urlSession = URLSession.shared
-    private let apiKey = "&api_key=OjM5OTI4ZDkyZGY3MWFkNjczODk1NzYzYjU2MTA2NThm"
+    private let apiKey = "&api_key=OjA5MGVkNzRkMzZhMzU0Y2VmZmY4YjNhNmJlYmVmODM4"
     private let stockUrl = "https://api.intrinio.com/prices?identifier="
     private let marketCapUrl = "https://api.intrinio.com/data_point?identifier="
     
@@ -72,16 +72,17 @@ class StockData {
         let calendar = Calendar.current
         
         let dayOfWeek = calendar.component(.weekday, from: dateToParse)
-        if (dayOfWeek == 1) || (dayOfWeek == 7) {
-            if dayOfWeek == 1{
-                dateToParse = dateToParse - 2
-            }
-            if dayOfWeek == 7{
-                dateToParse = dateToParse - 1
-            }
-        }
-        
-        let number = Int.random(in: 3 ... 4)
+//        print(dayOfWeek)
+//        print(dateToParse)
+//        if (dayOfWeek == 1) || (dayOfWeek == 7) {
+//            if dayOfWeek == 1{
+//                dateToParse = dateToParse - 2
+//            }
+//            if dayOfWeek == 7{
+//
+//                dateToParse = dateToParse - 1
+//            }
+//        }
 
         let day = calendar.component(.day, from: dateToParse)
         let month = calendar.component(.month, from: dateToParse)
@@ -94,24 +95,29 @@ class StockData {
         }
 //        let number = Int.random(in: 6 ... 9)
 //        var daychange = day-number
-        var days = number
+        var days = day
         var dayString = String(days)
         if dayString.count == 1 {
             dayString = "0" + dayString
         }
         var endString = ""
-        if days == 3{
-            endString = "&end_date="+yearString+monthString+dayString
+//        if days == 3{
+//            endString = "&end_date="+yearString+monthString+dayString
+//        }
+        var urlPath = ""
+        if dayOfWeek == 1 || dayOfWeek == 7{
+            urlPath = self.stockUrl + identifier + self.apiKey
+        } else {
+            let date = "&start_date=" + yearString + monthString + dayString + endString
+            urlPath = self.stockUrl + identifier + date + self.apiKey
         }
-        let date = "&start_date=" + yearString + monthString + dayString + endString
-        let urlPath = self.stockUrl + identifier + date + self.apiKey
+                //print(urlPath)
         //print(urlPath)
-        
         guard let url = URL(string: urlPath) else { //point 1
             print("Fail at point 1")
             return
         }
-        
+        //print(urlPath)
         urlSession.dataTask(with: url) { (data, response, error) in
             guard let data = data else { //point 2
                 print("Fail at point 2")
@@ -120,8 +126,9 @@ class StockData {
             do { //point 3
                 //print("URL session initialization success")
                 let assetData = try JSONDecoder.init().decode(AssetStock.self, from: data)
-                self.delegate?.stockDataHandler(data: assetData.stockNums[0])
-                print(assetData.stockNums[0].open)
+                //print(assetData.stockNums)
+                self.delegate?.stockDataHandler(data: assetData.stockNums[0], stock: identifier)
+                //print(assetData.stockNums[0].open)
             } catch {
                 print("Fail at point 3")
             }

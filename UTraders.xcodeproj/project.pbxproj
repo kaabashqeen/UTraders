@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		5F010B5921B515080055F1BF /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010B5821B515080055F1BF /* SearchData.swift */; };
 		5F010B5B21B5201C0055F1BF /* companySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */; };
-		5F4C2CC121B7AFCD00A2CB87 /* din1451alt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CBF21B7AFCD00A2CB87 /* din1451alt.ttf */; };
-		5F4C2CC221B7AFCD00A2CB87 /* din1451alt G.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC021B7AFCD00A2CB87 /* din1451alt G.ttf */; };
-		5F4C2CCC21B7B54C00A2CB87 /* D-DINCondensed-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC321B7B54B00A2CB87 /* D-DINCondensed-Bold.otf */; };
-		5F4C2CCD21B7B54C00A2CB87 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC421B7B54B00A2CB87 /* SIL Open Font License.txt */; };
-		5F4C2CCE21B7B54C00A2CB87 /* D-DINCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC521B7B54B00A2CB87 /* D-DINCondensed.otf */; };
-		5F4C2CCF21B7B54C00A2CB87 /* D-DIN-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC621B7B54B00A2CB87 /* D-DIN-Italic.otf */; };
-		5F4C2CD021B7B54C00A2CB87 /* D-DINExp.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC721B7B54B00A2CB87 /* D-DINExp.otf */; };
-		5F4C2CD121B7B54C00A2CB87 /* D-DIN-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC821B7B54B00A2CB87 /* D-DIN-Bold.otf */; };
-		5F4C2CD221B7B54C00A2CB87 /* D-DIN.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CC921B7B54B00A2CB87 /* D-DIN.otf */; };
-		5F4C2CD321B7B54C00A2CB87 /* D-DINExp-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CCA21B7B54B00A2CB87 /* D-DINExp-Bold.otf */; };
-		5F4C2CD421B7B54C00A2CB87 /* D-DINExp-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F4C2CCB21B7B54C00A2CB87 /* D-DINExp-Italic.otf */; };
+		5F3A17E421BDA8EA007A1D7A /* D-DINExp.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17D921BDA8E9007A1D7A /* D-DINExp.otf */; };
+		5F3A17E521BDA8EA007A1D7A /* D-DINCondensed-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17DA21BDA8E9007A1D7A /* D-DINCondensed-Bold.otf */; };
+		5F3A17E621BDA8EA007A1D7A /* D-DIN-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17DB21BDA8E9007A1D7A /* D-DIN-Bold.otf */; };
+		5F3A17E721BDA8EA007A1D7A /* din1451alt G.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17DC21BDA8E9007A1D7A /* din1451alt G.ttf */; };
+		5F3A17E821BDA8EA007A1D7A /* D-DIN.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17DD21BDA8E9007A1D7A /* D-DIN.otf */; };
+		5F3A17E921BDA8EA007A1D7A /* D-DINCondensed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17DE21BDA8E9007A1D7A /* D-DINCondensed.otf */; };
+		5F3A17EA21BDA8EA007A1D7A /* D-DINExp-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17DF21BDA8E9007A1D7A /* D-DINExp-Italic.otf */; };
+		5F3A17EB21BDA8EA007A1D7A /* D-DINExp-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17E021BDA8EA007A1D7A /* D-DINExp-Bold.otf */; };
+		5F3A17EC21BDA8EA007A1D7A /* D-DIN-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17E121BDA8EA007A1D7A /* D-DIN-Italic.otf */; };
+		5F3A17ED21BDA8EA007A1D7A /* din1451alt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17E221BDA8EA007A1D7A /* din1451alt.ttf */; };
+		5F3A17EE21BDA8EA007A1D7A /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5F3A17E321BDA8EA007A1D7A /* SIL Open Font License.txt */; };
+		5F3A181421BDF3DF007A1D7A /* AssetGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A181321BDF3DF007A1D7A /* AssetGraphView.swift */; };
+		5F3A181621BECB15007A1D7A /* StockWeekData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A181521BECB15007A1D7A /* StockWeekData.swift */; };
 		5F8F3E3421B6F0D600EA1687 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F3E3321B6F0D600EA1687 /* Asset.swift */; };
 		5F8F3E3621B7141300EA1687 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F3E3521B7141300EA1687 /* SettingsViewController.swift */; };
 		5F8F3E3821B7167800EA1687 /* Investments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F3E3721B7167800EA1687 /* Investments.swift */; };
-		5F9479AE21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */; };
+		5F9479AE21B61A9800B5D3E1 /* UTraders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F9479AC21B61A9800B5D3E1 /* UTraders.xcdatamodeld */; };
 		5FC879C121A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */; };
 		5FC879C321A3C6BE00A1CB22 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC879C221A3C6BE00A1CB22 /* SearchViewController.swift */; };
 		5FF029EF21AF9A4D0014DBA3 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF029EE21AF9A4D0014DBA3 /* AssetViewController.swift */; };
@@ -39,17 +41,20 @@
 /* Begin PBXFileReference section */
 		5F010B5821B515080055F1BF /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
 		5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = companySearchTableViewCell.swift; sourceTree = "<group>"; };
-		5F4C2CBF21B7AFCD00A2CB87 /* din1451alt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din1451alt.ttf; sourceTree = "<group>"; };
-		5F4C2CC021B7AFCD00A2CB87 /* din1451alt G.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din1451alt G.ttf"; sourceTree = "<group>"; };
-		5F4C2CC321B7B54B00A2CB87 /* D-DINCondensed-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINCondensed-Bold.otf"; path = "../../../../Downloads/d-din/D-DINCondensed-Bold.otf"; sourceTree = "<group>"; };
-		5F4C2CC421B7B54B00A2CB87 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "SIL Open Font License.txt"; path = "../../../../Downloads/d-din/SIL Open Font License.txt"; sourceTree = "<group>"; };
-		5F4C2CC521B7B54B00A2CB87 /* D-DINCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINCondensed.otf"; path = "../../../../Downloads/d-din/D-DINCondensed.otf"; sourceTree = "<group>"; };
-		5F4C2CC621B7B54B00A2CB87 /* D-DIN-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DIN-Italic.otf"; path = "../../../../Downloads/d-din/D-DIN-Italic.otf"; sourceTree = "<group>"; };
-		5F4C2CC721B7B54B00A2CB87 /* D-DINExp.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINExp.otf"; path = "../../../../Downloads/d-din/D-DINExp.otf"; sourceTree = "<group>"; };
-		5F4C2CC821B7B54B00A2CB87 /* D-DIN-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DIN-Bold.otf"; path = "../../../../Downloads/d-din/D-DIN-Bold.otf"; sourceTree = "<group>"; };
-		5F4C2CC921B7B54B00A2CB87 /* D-DIN.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DIN.otf"; path = "../../../../Downloads/d-din/D-DIN.otf"; sourceTree = "<group>"; };
-		5F4C2CCA21B7B54B00A2CB87 /* D-DINExp-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINExp-Bold.otf"; path = "../../../../Downloads/d-din/D-DINExp-Bold.otf"; sourceTree = "<group>"; };
-		5F4C2CCB21B7B54C00A2CB87 /* D-DINExp-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "D-DINExp-Italic.otf"; path = "../../../../Downloads/d-din/D-DINExp-Italic.otf"; sourceTree = "<group>"; };
+		5F3A17D921BDA8E9007A1D7A /* D-DINExp.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DINExp.otf"; sourceTree = "<group>"; };
+		5F3A17DA21BDA8E9007A1D7A /* D-DINCondensed-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DINCondensed-Bold.otf"; sourceTree = "<group>"; };
+		5F3A17DB21BDA8E9007A1D7A /* D-DIN-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DIN-Bold.otf"; sourceTree = "<group>"; };
+		5F3A17DC21BDA8E9007A1D7A /* din1451alt G.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "din1451alt G.ttf"; sourceTree = "<group>"; };
+		5F3A17DD21BDA8E9007A1D7A /* D-DIN.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DIN.otf"; sourceTree = "<group>"; };
+		5F3A17DE21BDA8E9007A1D7A /* D-DINCondensed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DINCondensed.otf"; sourceTree = "<group>"; };
+		5F3A17DF21BDA8E9007A1D7A /* D-DINExp-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DINExp-Italic.otf"; sourceTree = "<group>"; };
+		5F3A17E021BDA8EA007A1D7A /* D-DINExp-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DINExp-Bold.otf"; sourceTree = "<group>"; };
+		5F3A17E121BDA8EA007A1D7A /* D-DIN-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "D-DIN-Italic.otf"; sourceTree = "<group>"; };
+		5F3A17E221BDA8EA007A1D7A /* din1451alt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = din1451alt.ttf; sourceTree = "<group>"; };
+		5F3A17E321BDA8EA007A1D7A /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		5F3A181321BDF3DF007A1D7A /* AssetGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetGraphView.swift; sourceTree = "<group>"; };
+		5F3A181521BECB15007A1D7A /* StockWeekData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockWeekData.swift; sourceTree = "<group>"; };
+		5F3A181721BF6FF2007A1D7A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5F8F3E3321B6F0D600EA1687 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		5F8F3E3521B7141300EA1687 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5F8F3E3721B7167800EA1687 /* Investments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investments.swift; sourceTree = "<group>"; };
@@ -82,17 +87,17 @@
 		5F4C2CBE21B7AFCD00A2CB87 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				5F4C2CC821B7B54B00A2CB87 /* D-DIN-Bold.otf */,
-				5F4C2CC621B7B54B00A2CB87 /* D-DIN-Italic.otf */,
-				5F4C2CC921B7B54B00A2CB87 /* D-DIN.otf */,
-				5F4C2CC321B7B54B00A2CB87 /* D-DINCondensed-Bold.otf */,
-				5F4C2CC521B7B54B00A2CB87 /* D-DINCondensed.otf */,
-				5F4C2CCA21B7B54B00A2CB87 /* D-DINExp-Bold.otf */,
-				5F4C2CCB21B7B54C00A2CB87 /* D-DINExp-Italic.otf */,
-				5F4C2CC721B7B54B00A2CB87 /* D-DINExp.otf */,
-				5F4C2CC421B7B54B00A2CB87 /* SIL Open Font License.txt */,
-				5F4C2CBF21B7AFCD00A2CB87 /* din1451alt.ttf */,
-				5F4C2CC021B7AFCD00A2CB87 /* din1451alt G.ttf */,
+				5F3A17DB21BDA8E9007A1D7A /* D-DIN-Bold.otf */,
+				5F3A17E121BDA8EA007A1D7A /* D-DIN-Italic.otf */,
+				5F3A17DD21BDA8E9007A1D7A /* D-DIN.otf */,
+				5F3A17DA21BDA8E9007A1D7A /* D-DINCondensed-Bold.otf */,
+				5F3A17DE21BDA8E9007A1D7A /* D-DINCondensed.otf */,
+				5F3A17E021BDA8EA007A1D7A /* D-DINExp-Bold.otf */,
+				5F3A17DF21BDA8E9007A1D7A /* D-DINExp-Italic.otf */,
+				5F3A17D921BDA8E9007A1D7A /* D-DINExp.otf */,
+				5F3A17DC21BDA8E9007A1D7A /* din1451alt G.ttf */,
+				5F3A17E221BDA8EA007A1D7A /* din1451alt.ttf */,
+				5F3A17E321BDA8EA007A1D7A /* SIL Open Font License.txt */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				98CB987021B76B5100554D05 /* PortfolioDisplayView.swift */,
+				5F3A181321BDF3DF007A1D7A /* AssetGraphView.swift */,
 				5FC879C021A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift */,
 				5F010B5A21B5201C0055F1BF /* companySearchTableViewCell.swift */,
 			);
@@ -123,6 +129,7 @@
 			children = (
 				5F010B5821B515080055F1BF /* SearchData.swift */,
 				5FF029F021AF9DB10014DBA3 /* StockData.swift */,
+				5F3A181521BECB15007A1D7A /* StockWeekData.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F6F29F2194EEF000FF777A /* Main.storyboard */,
+				5F3A181721BF6FF2007A1D7A /* README.md */,
 				D6F6F29B2194EEF000FF777A /* AppDelegate.swift */,
 				5F8F3E3221B6F0C000EA1687 /* Models */,
 				5F8F3E2F21B645C100EA1687 /* Views */,
@@ -164,7 +172,7 @@
 				D6F6F2A22194EEF200FF777A /* Assets.xcassets */,
 				5F4C2CBE21B7AFCD00A2CB87 /* fonts */,
 				D6F6F2A42194EEF200FF777A /* LaunchScreen.storyboard */,
-				5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */,
+				5F9479AC21B61A9800B5D3E1 /* UTraders.xcdatamodeld */,
 				D6F6F2A72194EEF200FF777A /* Info.plist */,
 			);
 			path = UTraders;
@@ -229,20 +237,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4C2CCE21B7B54C00A2CB87 /* D-DINCondensed.otf in Resources */,
-				5F4C2CCD21B7B54C00A2CB87 /* SIL Open Font License.txt in Resources */,
+				5F3A17EE21BDA8EA007A1D7A /* SIL Open Font License.txt in Resources */,
+				5F3A17EC21BDA8EA007A1D7A /* D-DIN-Italic.otf in Resources */,
 				D6F6F2A62194EEF200FF777A /* LaunchScreen.storyboard in Resources */,
-				5F4C2CD321B7B54C00A2CB87 /* D-DINExp-Bold.otf in Resources */,
-				5F4C2CCC21B7B54C00A2CB87 /* D-DINCondensed-Bold.otf in Resources */,
-				5F4C2CD221B7B54C00A2CB87 /* D-DIN.otf in Resources */,
-				5F4C2CC121B7AFCD00A2CB87 /* din1451alt.ttf in Resources */,
+				5F3A17E621BDA8EA007A1D7A /* D-DIN-Bold.otf in Resources */,
 				D6F6F2A32194EEF200FF777A /* Assets.xcassets in Resources */,
-				5F4C2CD421B7B54C00A2CB87 /* D-DINExp-Italic.otf in Resources */,
 				D6F6F2A12194EEF000FF777A /* Main.storyboard in Resources */,
-				5F4C2CD121B7B54C00A2CB87 /* D-DIN-Bold.otf in Resources */,
-				5F4C2CC221B7AFCD00A2CB87 /* din1451alt G.ttf in Resources */,
-				5F4C2CD021B7B54C00A2CB87 /* D-DINExp.otf in Resources */,
-				5F4C2CCF21B7B54C00A2CB87 /* D-DIN-Italic.otf in Resources */,
+				5F3A17E821BDA8EA007A1D7A /* D-DIN.otf in Resources */,
+				5F3A17E521BDA8EA007A1D7A /* D-DINCondensed-Bold.otf in Resources */,
+				5F3A17EA21BDA8EA007A1D7A /* D-DINExp-Italic.otf in Resources */,
+				5F3A17ED21BDA8EA007A1D7A /* din1451alt.ttf in Resources */,
+				5F3A17E721BDA8EA007A1D7A /* din1451alt G.ttf in Resources */,
+				5F3A17EB21BDA8EA007A1D7A /* D-DINExp-Bold.otf in Resources */,
+				5F3A17E921BDA8EA007A1D7A /* D-DINCondensed.otf in Resources */,
+				5F3A17E421BDA8EA007A1D7A /* D-DINExp.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,17 +262,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F8F3E3821B7167800EA1687 /* Investments.swift in Sources */,
-				5F9479AE21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld in Sources */,
+				5F9479AE21B61A9800B5D3E1 /* UTraders.xcdatamodeld in Sources */,
 				D6F6F2AE2194EF5600FF777A /* PortfolioTableViewController.swift in Sources */,
 				5F8F3E3621B7141300EA1687 /* SettingsViewController.swift in Sources */,
 				5FC879C121A3C53500A1CB22 /* PortfolioAssetTableViewCell.swift in Sources */,
 				98CB987121B76B5100554D05 /* PortfolioDisplayView.swift in Sources */,
 				5F010B5921B515080055F1BF /* SearchData.swift in Sources */,
+				5F3A181621BECB15007A1D7A /* StockWeekData.swift in Sources */,
 				5FF029F121AF9DB10014DBA3 /* StockData.swift in Sources */,
 				5FF029EF21AF9A4D0014DBA3 /* AssetViewController.swift in Sources */,
 				5FC879C321A3C6BE00A1CB22 /* SearchViewController.swift in Sources */,
 				5F010B5B21B5201C0055F1BF /* companySearchTableViewCell.swift in Sources */,
 				5F8F3E3421B6F0D600EA1687 /* Asset.swift in Sources */,
+				5F3A181421BDF3DF007A1D7A /* AssetGraphView.swift in Sources */,
 				D6F6F29C2194EEF000FF777A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +335,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -349,8 +359,6 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -391,7 +399,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -407,7 +414,6 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -418,14 +424,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GXVLCK5PWH;
 				INFOPLIST_FILE = UTraders/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = UTraders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -441,14 +448,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GXVLCK5PWH;
 				INFOPLIST_FILE = UTraders/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = UTraders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -481,13 +489,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5F9479AC21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodeld */ = {
+		5F9479AC21B61A9800B5D3E1 /* UTraders.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				5F9479AD21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodel */,
 			);
 			currentVersion = 5F9479AD21B61A9800B5D3E1 /* PortfolioDataModel.xcdatamodel */;
-			path = PortfolioDataModel.xcdatamodeld;
+			path = UTraders.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
